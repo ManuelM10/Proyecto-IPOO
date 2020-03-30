@@ -43,36 +43,34 @@ void Tablero::leerArchivo()
 //Permite mostrar el tablero en consola.
 void Tablero::imprimirTablero()
 {
-   int conti=0;
-  int contj=0;
-
-  for (int i=0; i<10; i++){
-    if(contj>0 && contj<9)
-    {cout<<" "<<contj;}
-    else if(contj==0)
-    {cout<<"  "<<contj;}
-    else if(contj==9)
-    {cout<<" "<<contj<<" ";}
-    contj+=1;
-  }
-  cout<<endl;
-
-  for(int i=0;i< SIZE; i++){
-    cout<<conti<<" ";
-    for(int j=0; j< SIZE; j++){
-      cout<<tablero[i][j]<<" ";
-
+  
+   int k=0; 
+  //imprime fila 1 (de cero a nueve).
+  for (int i=0;i<10;i++){
+    if (i==0){
+      cout<<"     ";
     }
-    cout<<endl;
-    conti+=1;
+    cout<<i<<"    ";
+  }
+  cout<<"\n\n";
+  // i recorre las filas.
+   // j recorre las columnas
+  for(int i=0;i<10;i++){
+    cout<<k<<"   "; // imprime columna 1 (de cero a nueve).
+    k++;
+    for(int j=0;j<10;j++){
+      cout<<"["<<tablero[i][j]<<"]  ";
+    }
+    cout<<"\n\n";
   }
 
 }
-/*void Tablero::modificarElementio(int x, int y, int valor)
+
+void Tablero::modificarElemento(int x, int y, int valor)
 {
   tablero[x][y]= valor;
 }
 int Tablero:: obtenerPunto(int x, int y)
 {
   return tablero[x][y];
-}*/
+}

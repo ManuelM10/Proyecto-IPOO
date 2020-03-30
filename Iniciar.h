@@ -9,6 +9,7 @@
 using std::string;
 using namespace std;
 #include "Tablero.h"
+#include "Fichas.h"
 
 class Iniciar 
 {
@@ -19,17 +20,19 @@ class Iniciar
   ~Iniciar();
 
   void Menu();
+  void Menu1();
   void EscojeOpcion();
-  //void GuardarDatos(string rutaArchivo);
-  void CargarPartida(string rutaArchico);
+  void CargarPartida(string rutraArchivo);
   void ImprimirDatos(string rutaArchivo);
-  void GuardarDatos(string rutraArchivo);
+  void GuardarDatos(string rutaArchivo);
+  
 
   private:
   int a;
-  vector<string>PartidaGuardada;
+  int c;
+  vector<int>PartidaGuardada;
 
 };
 
 
-#endif
+#endif 

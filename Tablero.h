@@ -7,6 +7,8 @@
 #include <stack>//para utilizar pilas y colas
 #include <stdlib.h>
 #include <sstream>//stream string
+#include "Ejercito.h"
+#include "Fichas.h"
 
 class Tablero 
 {
@@ -17,7 +19,8 @@ class Tablero
   ~Tablero();
   void leerArchivo();
   void imprimirTablero();
-  //void modificarElementio(int x, int y, int valor);
+  void presentarEjercito(vector<double>avatar);
+  void modificarElemento(int x, int y, int valor);
   int obtenerPunto(int x, int y);
 
 

@@ -1,0 +1,17 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t giovanny .
+
+script:
+  - docker run giovanny
+
+notifications:
+  email:
+    recipients:
+      - carlos.hidalgo@correounivalle.edu.co
+      - victor.bucheli@correounivalle.edu.co
+    on_success: always # default: change
+    on_failure: always # default: always
