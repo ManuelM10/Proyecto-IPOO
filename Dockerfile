@@ -2,6 +2,6 @@ FROM gcc:4.9
 
 RUN mkdir /code
 WORKDIR /code
-COPY Test.cpp /code
-RUN g++ -o Test Test.cpp
+COPY main.cpp /code
+RUN g++ -o Test main.cpp Fichas.cpp Iniciar.cpp Tablero.cpp
 CMD ["./Test"]
