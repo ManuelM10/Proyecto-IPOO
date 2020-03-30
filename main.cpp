@@ -1,40 +1,21 @@
-#include <iostream>
-#include "Tablero.h"
-#include "Iniciar.h"
-#include "Fichas.h"
-#include <stdio.h>
+#include <stdio.h>      /* printf */
+#include <assert.h>     /* assert */
 
+void print_number(int* myInt) {
+  assert (myInt!=NULL);
+  printf ("%d\n",*myInt);
+}
 
-using namespace std;
+int main ()
+{
+  int d=10;
+  int * b = NULL;
+  int * c = NULL;
 
+  b=&d;
 
-int main() {
+  print_number (b);
+  print_number (b);
 
-
-
-  
-  
-  Iniciar jugador;
-  Tablero tablero;
-  Fichas ficha;
-  Fichas ficha1;
-  Fichas ficha2;
-  Fichas torre;
- 
-  
- /*tablero.leerArchivo();
- tablero.modificarElemento(4,4,torre.torre());
-  tablero.imprimirTablero();*/
-  
-  jugador.Menu();
-  //tablero.leerArchivo(); 
-  //tablero.imprimirTablero();
- /* tablero.modificarElemento(1, 1, ficha.luchador("ataque"));
-  tablero.modificarElemento(2, 1, ficha1.tirador("defensa"));
-  tablero.modificarElemento(7, 8, ficha2.mago("ataque"));
-  
-  cout<<endl;*/
-  //tablero.imprimirTablero();
-
-  
+  return 0;
 }
