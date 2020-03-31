@@ -1,2 +1,10 @@
 # Proyecto-IPOO
-Code Legends es un juego tipo competitivo, basado en la arquitectura monolítica P 2P (Peer to Peer) en el que se fusiona la velocidad y la estrategia, con elementos de juegos de rol. En el juego aparece un ejército de batalla conformado por n cantidad y 3 tipos de avatar, cada uno con un diseño y estilo único, que deberán luchar contra otro ejército. La dinámica del juego consiste en que un ejército trata de destruir la Torreta y el otro ejército trata de protegerla. ¡Por defender la Torreta, en batalla se perderán muchas vidas!
+Integrantes: 
+GONZALEZ JUAN ESTEBAN
+MADRID TORRES JOSE MANUEL
+LLANOS ALVAREZ CRISTIAN CAMILO
+QUENGUAN JUAN.
+
+Este proyecto académico, consta de, desarrollar un juego de nombre Code Legends, haciendo uso de todo lo aprendido durante el semestre, en el curso de IPOO. El codigo será hecho en el lenguaje C++ haciendo uso del paradigma OO.
+
+https://repl.it/@JUANESTEBANEST1/proyecto
