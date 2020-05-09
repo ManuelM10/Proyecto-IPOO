@@ -1,21 +1,62 @@
-#include <stdio.h>      /* printf */
-#include <assert.h>     /* assert */
+#include <iostream>
+#include "Tablero.h"
+#include "Movimientos.h"
 
-void print_number(int* myInt) {
-  assert (myInt!=NULL);
-  printf ("%d\n",*myInt);
-}
+int main() {
+  Tablero tablero;
+  Movimientos mover;
 
-int main ()
-{
-  int d=10;
-  int * b = NULL;
-  int * c = NULL;
+  mover.setTablero("Tablero.txt");
+  mover.mostrarTablero();
+  mover.mostrarPosicion();
+  
+  mover.moverEjercito();
+  //tablero.guardarPartida("Partida.txt");
+  
+  
+  /*char obcion;
+ do{
+  cout<<"****ASALTO A LA TORRETA****"<<endl;
+  cout<<"* 1.iniciar juego      ****"<<endl;
+  cout<<"* 2.cargar juego       ****"<<endl;
+  cout<<"* 3.instrucciones      ****"<<endl;
+  cout<<"* 4.mostrar el tablero ****"<<endl;
+  cout<<"***************************"<<endl;
+  cout<<endl;
 
-  b=&d;
+  
+  cout<<"escoja la opcion ";
+  cin>>obcion;
+  
+  switch(obcion)
+  {
+    case '1':
+  mover.setTablero("Tablero.txt");
+  mover.mostrarTablero();
+  mover.mostrarPosicion();
+  mover.moverEjercito();
+  mover.atacarTorreta();
+  break;
 
-  print_number (b);
-  print_number (b);
+  case '2':
+  mover.setTablero("Partida.txt");
+  mover.moverEjercito();
+  break;
 
-  return 0;
+  case '3':
+  cout<<"mostrar instrucciones"<<endl;
+  break;
+
+  case '4':
+  cout<<endl;
+  mover.setTablero("Tablero.txt");
+  mover.mostrarPosicion();
+  mover.mostrarTablero();
+  cout<<endl;
+  break;
+
+  }
+  }
+  while( (obcion!=1) || !(obcion!=2));
+*/
 }

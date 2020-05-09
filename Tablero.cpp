@@ -1,76 +1,83 @@
-#include "Tablero.h"
-using namespace std;
-using std::string;
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <string>
 #include <fstream>
+#include <sstream>
+#include <vector>
+#include "Tablero.h"
+
+
+using namespace std;
 
 Tablero::Tablero()
 {
-
-}
+}  
 
 Tablero::~Tablero()
 {
 
 }
-//Carga el archivo Tablero.txt.
-void Tablero::leerArchivo()
+
+void Tablero::setTablero(string archivo)
 {
-  ifstream archivo;
-  string texto;
-  archivo.open("Tablero.txt", ios::in);
-  if(archivo.fail()){
-    cout<<"no se pudo cargar el tablero"<<endl;
-    exit(1);
-   }
-   int cont=0;
-   while(!archivo.eof()){
-     
-     getline(archivo,texto);
-     
-     istringstream f(texto);
-     string s;
-     int i=0;
-     while(getline(f, s, '\t')){
-       tablero[cont][i]=stoi(s);//stoi(): coje un vector y devuelve un entero.
-       i++;
-     }
-     cont = cont + 1;
-   }
-   archivo.close();
- 
+  //arreglo dinamico para transformar el archivo.txt en un array
+  fstream leer(archivo.c_str());//Lee el archivo.txt donde se encuentra el tablero
+  for(int i=0;i<10;i++)
+  {
+    for(int j=0;j<10;j++)
+      leer>>tablero[i][j];//Transformacion del archivo.txt a una matriz
+  }
 }
 
-//Permite mostrar el tablero en consola.
-void Tablero::imprimirTablero()
+void Tablero::mostrarTablero()
 {
-  
-   int k=0; 
-  //imprime fila 1 (de cero a nueve).
-  for (int i=0;i<10;i++){
-    if (i==0){
-      cout<<"     ";
-    }
-    cout<<i<<"    ";
+  //Transformacion de Tablero.txt a un array dinamico
+  for(int i=0;i<10;i++)//Ciclo que muestra en pantalla el tablero
+  {
+    for(int j=0;j<10;j++)
+      cout << tablero[i][j] << " ";
+    cout << endl;
   }
-  cout<<"\n\n";
-  // i recorre las filas.
-   // j recorre las columnas
-  for(int i=0;i<10;i++){
-    cout<<k<<"   "; // imprime columna 1 (de cero a nueve).
-    k++;
-    for(int j=0;j<10;j++){
-      cout<<"["<<tablero[i][j]<<"]  ";
-    }
-    cout<<"\n\n";
-  }
+}
 
+void Tablero::guardarPartida(string nombre){
+  
+  /*ofstream outputfile;
+  outputfile.open(nombre.c_str());
+  if(outputfile.fail())
+  cout<<"El archivo no abrio correctamente"<<endl;
+
+  
+
+   for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 10; j++) {
+      outputfile<<tablero[i][j]<<" ";
+    }
+   }
+    
+  outputfile.close();*/
+  
+  
+  ofstream archive;
+  string name;
+  name=+"Partida.txt";
+  archive.open(name);
+  if(archive.fail()){
+    cout << "No se pudo abrir el archivo.";
+    exit(1);
+  }
+  for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 10; j++) {
+      archive<<tablero[i][j]<<" ";
+    }
+    archive << endl;
+  }
 }
 
 void Tablero::modificarElemento(int x, int y, int valor)
 {
   tablero[x][y]= valor;
-}
-int Tablero:: obtenerPunto(int x, int y)
-{
-  return tablero[x][y];
 }

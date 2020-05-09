@@ -1,33 +1,33 @@
-#ifndef TABLERO_H
-#define TABLERO_H
 #include <iostream>
-#include <fstream>
 #include <string>
+#include <fstream>
 #include <vector>
-#include <stack>//para utilizar pilas y colas
-#include <stdlib.h>
-#include <sstream>//stream string
-#include "Ejercito.h"
-#include "Fichas.h"
+#include <sstream>
 
-class Tablero 
+#ifndef _TABLERO_H_
+#define _TABLERO_H_
+
+#include <string>
+
+using namespace std;
+
+class Tablero
 {
   public:
-  static const int SIZE=10;
-
-  Tablero();
-  ~Tablero();
-  void leerArchivo();
-  void imprimirTablero();
-  void presentarEjercito(vector<double>avatar);
-  void modificarElemento(int x, int y, int valor);
-  int obtenerPunto(int x, int y);
-
-
+    Tablero();
+    ~Tablero();
+    
+    void setTablero(string archivo);
+    void mostrarTablero();//muestra el tablero y posicion de las fichas
+    void guardarPartida(string nombre);//guarda la ultima partida jugada
+    int tablero[10][10];//Array que representa el tablero
+    void modificarElemento(int x, int y, int valor);//modifica un punto del tablero.
+  
 
   private:
-  int tablero[SIZE][SIZE];
-  
+
+ //vector<int>tablero;
+    
 };
 
-#endif
+#endif 
