@@ -11,8 +11,7 @@ using namespace std;
 ejercito1[1] = 0 (quiere decir que el ejercito ha sido derrotado, y muestra 0, en pantalla)
 torreta[1] = 3 (Quiere decir que la torre, ha sido destruiada)
 */
-Movimientos::Movimientos()
-{
+Movimientos::Movimientos(){
   //Ejercito atacante
   
   
@@ -37,8 +36,7 @@ Movimientos::Movimientos()
   
 }
 
-Movimientos::~Movimientos()
-{ 
+Movimientos::~Movimientos(){ 
 }
 
 void Movimientos::mostrarPosicion()
@@ -57,10 +55,12 @@ void Movimientos::mostrarPosicion()
 
 }
 
-//este metodo es para mover los ejercitos por el mapa y el resto de acciones como atacar y recargar la vida
+////////////////////////////////////////////////////////
+///Movimientos
+///////////////////////////////////////////////////////
 
-void Movimientos::moverEjercito()
-{
+//este metodo es para mover los ejercitos por el mapa y el resto de acciones como atacar y recargar la vida
+void Movimientos::moverEjercito(){
   
   //Borra todo lo que se ha mostrado en pantalla, hasta llegar a el
   system("clear");
@@ -173,14 +173,12 @@ void Movimientos::moverEjercito()
   
   system("clear");
  
-  if(k%2==0)
-  {
+  if(k%2==0){
     cout<<"TURNO DEL EJERCITO 1"<<endl;
     cout<<endl;
   }
 
-  if(k%2==1)
-  {
+  if(k%2==1){
     cout<<"TURNO DEL EJERCITO 2"<<endl;
     cout<<endl;
   }
@@ -197,15 +195,14 @@ void Movimientos::moverEjercito()
   cout<< "vida del personaje " <<v1+1<< " del ejercito 1: " <<vida1<<endl;
   cout<< "vida del personaje " <<v2+1<< " del ejercito 2: " <<vida2<<endl;  
   
-  if(k%4==0 && k<120)
-  {
+  if(k%4==0 && k<120){
     colocarBonus();
   }
 
   recargarVida();
   
   //Se cierra el do
-  }while((p != 4) && (value == 'a' || value == 'd' || value == 's' || value == 'w' || value == 'l' || value == 'i' || value == 'j' || value == 'k') && (poderTotal1 > 0 && poderTotal2 > 0 && (value != '1')));
+  }while((p != 4) && (value == 'a' || value == 'd' || value == 's' || value == 'w' || value == 'l' || value == 'i' || value == 'j' || value == 'k') && (poderTotal1 > 0 && poderTotal2 > 0 && (value != '5')));
 
   system("clear");
   
@@ -218,47 +215,10 @@ void Movimientos::moverEjercito()
    cout << "¡¡¡¡¡¡¡¡¡¡EL EJERCITO 1 GANA!!!!!!!!" << endl;
   }
 } 
+//////////////////////////////////////////////////////////
 
-//METODO PARA ATACAR LA TORRETA POR CUATRO LADOS DIFERENTES 
-void Movimientos::atacarTorreta()
-{   
- 
-  if(tablero[5][4]==ejercito2[0])
-  { 
-    tablero[5][4]= 8;
-    system("clear");
-    x2=9;
-    y2=4;    
-    p++;
-  }
-  
-  if(tablero[4][3]==ejercito2[0])
-  { 
-    tablero[4][3]= 8;
-    system("clear");
-    x2=9;
-    y2=4;    
-    p++;
-  }
-  
-  if(tablero[3][4]==ejercito2[0])
-  { 
-    tablero[3][4]= 8;
-    system("clear");
-    x2=9;
-    y2=4;    
-    p++;
-  }
 
-  if(tablero[4][5]==ejercito2[0])
-  { 
-    tablero[4][5]= 8;
-    system("clear");
-    x2=9;
-    y2=4;    
-    p++;
-  }
-}
+
 
 //Esta funcion, se encarga de ordernar los personajes en el vector de mayor a menor segun su cantidad de vida
 void Movimientos::organizarPersonajes()
@@ -343,13 +303,49 @@ void Movimientos::totalMana()
     //cout<<manaTotal2<<endl;
 }
 
+////////////////////////////////////////////////////////
+///Batalla
+///////////////////////////////////////////////////////
+
+//METODO PARA ATACAR LA TORRETA POR CUATRO LADOS DIFERENTES 
+void Movimientos::atacarTorreta(){   
+ 
+  if(tablero[5][4]==ejercito2[0]){ 
+    tablero[5][4]= 8;
+    system("clear");
+    x2=9;
+    y2=4;    
+    p++;
+  }
+  
+  if(tablero[4][3]==ejercito2[0]){ 
+    tablero[4][3]= 8;
+    system("clear");
+    x2=9;
+    y2=4;    
+    p++;
+  }
+  
+  if(tablero[3][4]==ejercito2[0]){ 
+    tablero[3][4]= 8;
+    system("clear");
+    x2=9;
+    y2=4;    
+    p++;
+  }
+
+  if(tablero[4][5]==ejercito2[0]){ 
+    tablero[4][5]= 8;
+    system("clear");
+    x2=9;
+    y2=4;    
+    p++;
+  }
+}
+
 //
 //EL METODO PARA LA BATALLA ENTRE EJERCITOS
-void Movimientos::batalla()
-{
-  
-
-  
+void Movimientos::batalla(){    
     //EJercito 1 ataca 
 
 if(value == 'w' || value == 's' || value == 'a' || value == 'd'){
@@ -397,9 +393,9 @@ if(value == 'w' || value == 's' || value == 'a' || value == 'd'){
   }
   //cuando el poder del ejercito 1 y el mana del ejercito 2 son iguales
   if(poderTotal1 == manaTotal2){
-        if(vida1 > 0 && vida2 > 0){  
-        vida1 = vida1 - 0.2;
-        vida2 = vida2 - 0.2;
+      if(vida1 > 0 && vida2 > 0){  
+      vida1 = vida1 - 0.2;
+      vida2 = vida2 - 0.2;
       
       }
     
@@ -423,9 +419,9 @@ if(value == 'w' || value == 's' || value == 'a' || value == 'd'){
     }
   }
 }  
-//////////////////////////////////////////////////////////////////
-
+//////////////////////////////////////////////////////////
   //EJERCITO 2 ATACA
+  
   if(value == 'i' || value == 'k' || value == 'j' || value == 'l' ){
     if(tablero[x2][y2+1] == ejercito1[0] || tablero[x2][y2-1] == ejercito1[0] || tablero[x2+1][y2] == ejercito1[0] || tablero[x2-1][y2] == ejercito1[0] ){ 
         
@@ -469,11 +465,10 @@ if(value == 'w' || value == 's' || value == 'a' || value == 'd'){
     }
   }
   //cuando el poder del ejercito 2 y el mana del ejercito 2 son iguales
-  if(poderTotal2 == manaTotal1){
+    if(poderTotal2 == manaTotal1){
       if(vida2 > 0 && vida1 > 0){  
       vida1 = vida1 - 0.2;
       vida2 = vida2 - 0.2;
-      
     }
     
     if(vida1 <= 0){
@@ -491,12 +486,13 @@ if(value == 'w' || value == 's' || value == 'a' || value == 'd'){
         }
           vida2=ejercito_2[v2] -> getVida();     
         
+          }  
         }  
-      }  
-    }    
+      }    
     } 
   }
 }
+//////////////////////////////////////////////////////////
 
 //este metodo inserta los avatares escogidos al ejercito 1
 void Movimientos::insertarAvatares1()
@@ -571,12 +567,12 @@ PROPÓSITO: Reescribe o guarda en un documento plano los cambios hechos a los da
 CABECERA:*/
 void Movimientos::guardarPartida(string Ruta2) 
 {
-/*
+
 ofstream outputFile;
 outputFile.open(Ruta2.c_str());
 if(outputFile.fail()) {
 cout << "el Archivo no abrio correctamente" << endl;
-}*/
+}
 
 /*for (int I = 0; I < Tamano; I ++) {
 for (int J = 0; J < Tamano; J ++) {
@@ -588,58 +584,58 @@ outputFile << tablero[I][J] << "-";
 }
 }
 }*/
-/*
+
 
 int N = 0;
 
-for (int I = 0; I < ejercito1.size(); I ++) {
-if (I == (ejercito1.size() - 1)) {
-outputFile << ejercito1[N] << endl;
+for (int I = 0; I < 3; I ++) {
+if (I == 2) {
+outputFile << ejercito_1[N] << endl;
 }
 else {
-outputFile << ejercito1[N] << "-" ;
+outputFile << ejercito_1[N] << "-" ;
 }
 N ++;
 }
 N = 0;
 
-for (int I = 0; I < ejercito2.size(); I ++) {
-if (I == (ejercito2.size() - 1)) {
-outputFile << ejercito2[N] << endl;
+for (int I = 0; I < 3; I ++) {
+if (I == 2) {
+outputFile << ejercito_2[N] << endl;
 }
 else {
-outputFile << ejercito2[N] << "-";
-}
-N ++;
-}
-
-N = 0;
-
-for (int I = 0; I < posicion1.size(); I ++) {
-if (I == (posicion1.size() - 1)) {
-outputFile << posicion1[N] << endl;
-}
-else {
-outputFile << posicion1[N] << "-";
+outputFile << ejercito_2[N] << "-";
 }
 N ++;
 }
 
 N = 0;
 
-for (int I = 0; I < posicion2.size(); I ++) {
-if (I == (posicion2.size() - 1)) {
-outputFile << posicion2[N] << endl;
+for (int I = 0; I < 2; I ++) {
+if (I == 1) {
+outputFile << y1 << endl;
 }
 else {
-outputFile << posicion2[N] << "-";
+outputFile << x1 << "-";
+}
+N ++;
+}
+
+N = 0;
+
+for (int I = 0; I < 2; I ++) {
+if (I == 1) {
+outputFile << y2 << endl;
+}
+else {
+outputFile << x2 << "-";
 }
 N ++;
 }
 
 }
 
-EJEMPLO:
+/*EJEMPLO:
 Tablero[10][10];
 ejercito1[4];
 ejercito2[4];
@@ -661,7 +657,77 @@ L M M T
 
 (El método no retorna valores, el método solo guarda datos en un archivo plano).*/
 
-}
+/*void Movimientos::cargarPartida(string Ruta2)
+{
+  ifstream Archivo;
+  string Texto;
+  Archivo.open(Ruta2.c_str(), ios::in);
+  
+  if(Archivo.fail()) {
+    cout<<"No se pudo cargar el tablero\n";
+    exit(1);
+  }
+  
+  int Contador = 0;
+    
+  while(Contador <= 3) {
+    
+    getline(Archivo,Texto);  
+    
+    istringstream F(Texto); 
+    string S= "0";
+    
+    Personajes *P;
+    Personajes *P2; 
+    int I = 0;
+    int J = 0;
+    int U = 0;
+    int L = 0;
+    int M = 0;
+    
+    while (getline(F, S, '-')) {
+      /*if (Contador <= 9) {
+        tablero[Contador][I] = stoi(S);
+        I++;
+      }*/
+       if (Contador == 0) {
+         //cout<<J<<endl;
+         
+        ejercito_1[J] = P;
+        J++;
+      } 
+      else if (Contador == 1) {
+        
+        ejercito_2[U] = P2;
+        //cout<<U<<endl; 
+        U++;
+       
+      }
+      else if (Contador == 2) {
+        //cout<<L<<endl;
+        //if(L == 0)
+        x1 = stoi(S);
+        //if(L == 1)
+        y1= stoi(S);
+        L++;
+      }
+      else if(Contador==3) {
+        //cout<<M<<endl;
+        x2 = stoi(S);
+        y2 = stoi(S);
+        M++;
+      }
+    }
+
+    Contador = Contador + 1;
+
+  }
+
+  Archivo.close();
+
+}*/
+
+
 
 
 

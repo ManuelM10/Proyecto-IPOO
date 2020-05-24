@@ -7,6 +7,7 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <string>
 #include <random>
 #include "Tablero.h"
 #include "Personajes.h"
@@ -40,7 +41,7 @@ class Movimientos : public Tablero
     void insertarAvatares2();
 
     void guardarPartida(string Ruta2);
-    void cargarPartida();
+    void cargarPartida(string Ruta2);
 
     void colocarBonus();
     void recargarVida();

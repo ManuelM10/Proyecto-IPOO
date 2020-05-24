@@ -8,7 +8,7 @@ using namespace std;
 class Mago : public Personajes
 {
   public:
-   Mago(/*string, float, float, float*/);
+   Mago();
    
    
    float getVida();

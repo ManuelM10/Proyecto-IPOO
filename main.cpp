@@ -7,18 +7,9 @@
 
 int main() {
   
-  
- 
-  
-  
   Tablero tablero;
   Movimientos mover;
   
-  
-
-  
-  
-
   char opcion;
  
   cout<<"****ASALTO A LA TORRETA*****"<<endl;
@@ -54,7 +45,8 @@ int main() {
    mover.mostrarTablero();
    mover.mostrarPosicion();
    mover.moverEjercito();
-   //mover.guardarPartida("Partida_Guardada1.txt");
+   
+   mover.guardarPartida("Partida_Guardada1.txt");
    mover.guardarTablero();
    main();
    
@@ -62,10 +54,8 @@ int main() {
   break;
 
   case '2':
-  //mover.cargarPartida();
-  mover.totalPoder();
-  mover.totalMana();
-  mover.setTablero("Partida_Guardada.txt"); 
+  mover.setTablero("Partida_Guardada.txt");
+  //mover.cargarPartida("Partida_Guardada1.txt");   
   mover.moverEjercito();
   break;
 
@@ -86,7 +76,7 @@ int main() {
 
   }
   }
-  while(opcion != '1' && opcion != '2');
+  while((opcion != '1') && (opcion != '2') && (opcion !='5'));
   
   
 }
