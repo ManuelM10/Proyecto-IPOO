@@ -1,0 +1,30 @@
+
+ 1. Asalto a la torreta es un juego de turnos entre dos ejercitos:               
+    -ejercito atacante(2).                                                          
+    -ejercito defensor(1).                                 
+
+ 2. El atacante debera destruir la torreta, se requiere de 4 golpes.                 
+ 
+ 3. Si el ejercito atacante se queda sin jugadores, el ejercito defensor ganará.    
+ 
+ 4. Si el ejercito defensor se queda sin jugadores o no logra defender la torreta, el ejercito atacante ganara.
+ 
+ 5. Cuando se acerquen los dos ejercitos, empezara una batalla donde se compara la  defensa del ejercito defensor con el poder del ejercito atacanque, el mayor sera el ganador. El perdedor restara 0.5 al personaje con menor vida.
+
+ 6. El ejercito atacante se mueve con:
+        i
+      j k l
+ 
+ 7. El ejercito defensor de mueve con:
+        w
+      a s d
+
+ 8. los personajes tienen estas caracteristicas:
+    -Luchador:  poder    defensa    vida
+                0.7       0.6      4
+   
+    -Tirador:   poder    defensa    vida   
+                 1         0.3      3
+
+    -Mago:      poder    defensa    vida
+                0.2        1       4

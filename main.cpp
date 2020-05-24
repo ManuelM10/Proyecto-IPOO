@@ -1,50 +1,78 @@
 #include <iostream>
 #include "Tablero.h"
 #include "Movimientos.h"
+#include "Mago.h"
+#include "Luchador.h"
+#include "Tirador.h"
 
 int main() {
+  
+  
+ 
+  
+  
   Tablero tablero;
   Movimientos mover;
+  
+  
 
-  mover.setTablero("Tablero.txt");
-  mover.mostrarTablero();
-  mover.mostrarPosicion();
-  
-  mover.moverEjercito();
-  //tablero.guardarPartida("Partida.txt");
   
   
-  /*char obcion;
- do{
-  cout<<"****ASALTO A LA TORRETA****"<<endl;
-  cout<<"* 1.iniciar juego      ****"<<endl;
-  cout<<"* 2.cargar juego       ****"<<endl;
-  cout<<"* 3.instrucciones      ****"<<endl;
-  cout<<"* 4.mostrar el tablero ****"<<endl;
-  cout<<"***************************"<<endl;
+
+  char opcion;
+ 
+  cout<<"****ASALTO A LA TORRETA*****"<<endl;
+  cout<<"** 1.Iniciar juego      ****"<<endl;
+  cout<<"** 2.Cargar juego       ****"<<endl;
+  cout<<"** 3.Instrucciones      ****"<<endl;
+  cout<<"** 4.Mostrar el tablero ****"<<endl;
+  cout<<"****************************"<<endl;
   cout<<endl;
 
   
-  cout<<"escoja la opcion ";
-  cin>>obcion;
-  
-  switch(obcion)
+  cout<<"Elija la opcion ";
+  cin>>opcion;
+  do
+  {
+  switch(opcion)
   {
     case '1':
-  mover.setTablero("Tablero.txt");
-  mover.mostrarTablero();
-  mover.mostrarPosicion();
-  mover.moverEjercito();
-  mover.atacarTorreta();
+    system("clear");
+    tablero.mostrarInstrucciones("Avatares.txt");
+    cout<<"Elija sus avatares jugador 1: "<<endl;
+    mover.insertarAvatares1();
+    system("clear");
+
+    cout<<"Elija sus avatares jugador 2: "<<endl;
+    tablero.mostrarInstrucciones("Avatares.txt");
+    mover.insertarAvatares2();
+   
+   mover.organizarPersonajes();
+   mover.totalPoder();
+   mover.totalMana();
+   mover.setTablero("Tablero.txt");   
+   mover.mostrarTablero();
+   mover.mostrarPosicion();
+   mover.moverEjercito();
+   //mover.guardarPartida("Partida_Guardada1.txt");
+   mover.guardarTablero();
+   main();
+   
+  
   break;
 
   case '2':
-  mover.setTablero("Partida.txt");
+  //mover.cargarPartida();
+  mover.totalPoder();
+  mover.totalMana();
+  mover.setTablero("Partida_Guardada.txt"); 
   mover.moverEjercito();
   break;
 
   case '3':
-  cout<<"mostrar instrucciones"<<endl;
+  system("clear");
+  tablero.mostrarInstrucciones("Instrucciones.txt");
+  main();
   break;
 
   case '4':
@@ -52,11 +80,13 @@ int main() {
   mover.setTablero("Tablero.txt");
   mover.mostrarPosicion();
   mover.mostrarTablero();
+  main();
   cout<<endl;
   break;
 
   }
   }
-  while( (obcion!=1) || !(obcion!=2));
-*/
+  while(opcion != '1' && opcion != '2');
+  
+  
 }

@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
@@ -38,32 +39,17 @@ void Tablero::mostrarTablero()
   for(int i=0;i<10;i++)//Ciclo que muestra en pantalla el tablero
   {
     for(int j=0;j<10;j++)
-      cout << tablero[i][j] << " ";
-    cout << endl;
+      cout << tablero[i][j] << "   ";
+    cout << endl << endl;
   }
 }
 
-void Tablero::guardarPartida(string nombre){
-  
-  /*ofstream outputfile;
-  outputfile.open(nombre.c_str());
-  if(outputfile.fail())
-  cout<<"El archivo no abrio correctamente"<<endl;
-
-  
-
-   for (int i = 0; i < 10; i++) {
-    for (int j = 0; j < 10; j++) {
-      outputfile<<tablero[i][j]<<" ";
-    }
-   }
+void Tablero::guardarTablero()
+{
     
-  outputfile.close();*/
-  
-  
   ofstream archive;
   string name;
-  name=+"Partida.txt";
+  name=+"Partida_Guardada.txt";
   archive.open(name);
   if(archive.fail()){
     cout << "No se pudo abrir el archivo.";
@@ -79,5 +65,40 @@ void Tablero::guardarPartida(string nombre){
 
 void Tablero::modificarElemento(int x, int y, int valor)
 {
-  tablero[x][y]= valor;
+  tablero[x][y] = valor;
+}
+
+void Tablero::mostrarInstrucciones(string a)
+{
+  string texto;
+
+    ifstream archivo;
+  archivo.open(a.c_str());
+  if(archivo.fail())
+  {
+    cout<<"no se pudo abrir el archivo"<<endl;
+  }
+  while (!archivo.eof())
+  {
+    getline(archivo,texto);
+    cout<<texto<<endl;
+  }
+  archivo.close();
+
+}
+
+void Tablero::cargarPartida(string rutaArchivo)
+{ 
+   ofstream fichero("Partida_Guardada.txt");
+  // i recorre las filas.
+  // j recorre las columnas.
+  for(int i=0;i<10;i++){ 
+    for (int j=0;j<10;j++){ 
+      fichero<<tablero[i][j];
+      fichero<<" ";
+    }
+    fichero<<endl;
+  }
+  fichero.close();
+  cout<<"\n";
 }
