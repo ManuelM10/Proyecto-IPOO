@@ -690,7 +690,7 @@ L M M T
         tablero[Contador][I] = stoi(S);
         I++;
       }*/
-       if (Contador == 0) {
+       /*if (Contador == 0) {
          //cout<<J<<endl;
          
         ejercito_1[J] = P;
