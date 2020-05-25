@@ -87,7 +87,7 @@ void Tablero::mostrarInstrucciones(string a)
 
 }
 
-void Tablero::cargarPartida(string rutaArchivo)
+/*void Tablero::cargarPartida(string rutaArchivo)
 { 
    ofstream fichero("Partida_Guardada.txt");
   // i recorre las filas.
@@ -101,4 +101,4 @@ void Tablero::cargarPartida(string rutaArchivo)
   }
   fichero.close();
   cout<<"\n";
-}
+}*/
