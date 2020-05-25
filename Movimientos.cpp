@@ -686,11 +686,11 @@ L M M T
     int M = 0;
     
     while (getline(F, S, '-')) {
-      /*if (Contador <= 9) {
+      if (Contador <= 9) {
         tablero[Contador][I] = stoi(S);
         I++;
-      }*/
-       /*if (Contador == 0) {
+      }
+       if (Contador == 0) {
          //cout<<J<<endl;
          
         ejercito_1[J] = P;
