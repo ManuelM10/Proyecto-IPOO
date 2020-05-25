@@ -53,8 +53,8 @@ class Movimientos : public Tablero
   int torreta[2];
    
   private:
-    Personajes j1[3];
-    Personajes j2[3];
+    //Personajes j1[3];
+    //Personajes j2[3];
     float poderTotal1;
     float manaTotal1;
     float poderTotal2;
@@ -67,12 +67,12 @@ class Movimientos : public Tablero
     int y2;
     int ejercito1[2];
     int ejercito2[2];
-    int ejercito;
+    //int ejercito;
     int v1;
     int v2;
     int p;
-    int posicionx1;
-    int posicionx2;
+    //int posicionx1;
+    //int posicionx2;
     float c;
     int k;
     //bool vivo;
