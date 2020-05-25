@@ -85,7 +85,7 @@ void Movimientos::moverEjercito(){
   
     if(k%2==1){
       cout<<"turno del ejercito 1"<<endl;
-      atacarTorreta();
+      
       switch (value) {
     
         case 'd':
@@ -190,7 +190,7 @@ void Movimientos::moverEjercito(){
   <<"Mana del ejercito 2: "<<manaTotal2 << endl << endl;
   
   cout<<"La torreta ha resivido " << p << " golpes" <<endl;
-  
+  atacarTorreta();
   batalla();
   cout<< "vida del personaje " <<v1+1<< " del ejercito 1: " <<vida1<<endl;
   cout<< "vida del personaje " <<v2+1<< " del ejercito 2: " <<vida2<<endl;  
