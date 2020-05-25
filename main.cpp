@@ -23,8 +23,7 @@ int main() {
   
   cout<<"Elija la opcion ";
   cin>>opcion;
-  do
-  {
+  
   switch(opcion)
   {
     case '1':
@@ -75,8 +74,6 @@ int main() {
   break;
 
   }
-  }
-  while((opcion != '1') && (opcion != '2') && (opcion !='5'));
   
   
 }
